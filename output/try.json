@@ -1,0 +1,93 @@
+{
+  "track_id": "try",
+  "file_path": "try.mp3",
+  "file_name": "try.mp3",
+  "analysis": {
+    "version": "1.0.0",
+    "analyses": [
+      {
+        "processor": "librosa",
+        "tempo": {
+          "value": 117.1875,
+          "confidence": 0.8
+        },
+        "key": {
+          "value": "G# minor",
+          "confidence": 0.18771424230267478
+        },
+        "energy": {
+          "value": 1.0,
+          "variance": 0.010134294629096985,
+          "confidence": 0.9
+        },
+        "beat_consistency": {
+          "value": 0.9719679859842169,
+          "confidence": 0.8
+        },
+        "duration": 196.992,
+        "spectral": {
+          "centroid": 0.21307577195308364,
+          "bandwidth": 0.20520429679136137,
+          "rolloff": 0.4530772583543122,
+          "confidence": 0.9
+        },
+        "zero_crossing_rate": 0.11198136077330681,
+        "spectral_contrast": 26.21151829731922,
+        "mfcc": {
+          "mean": [
+            -79.55521392822266,
+            87.40316009521484,
+            -21.96455955505371,
+            37.05183792114258,
+            -20.811857223510742,
+            19.954059600830078,
+            -14.34862232208252,
+            12.527233123779297,
+            -5.406487464904785,
+            12.016505241394043,
+            -11.292403221130371,
+            11.67054271697998,
+            -11.604291915893555
+          ],
+          "variance": [
+            9484.5966796875,
+            397.6331787109375,
+            463.7588195800781,
+            307.4620361328125,
+            286.2156066894531,
+            218.53970336914062,
+            124.33464050292969,
+            226.7412567138672,
+            168.8996124267578,
+            174.47555541992188,
+            95.36053466796875,
+            124.3470458984375,
+            66.31704711914062
+          ],
+          "confidence": 0.9
+        },
+        "processing_time": 5.799661874771118
+      },
+      {
+        "duration": 196.992,
+        "essentia_processing_time": 1.971384048461914,
+        "processor": "essentia",
+        "classification": {
+          "genre": {
+            "value": "unknown",
+            "confidence": 0.0,
+            "error": "Empty predictions"
+          },
+          "mood": {
+            "value": "neutral",
+            "confidence": 0.0,
+            "error": "Empty predictions"
+          },
+          "instruments": [],
+          "confidence": 0.0
+        }
+      }
+    ]
+  },
+  "processing_time": 14.366752862930298
+}
