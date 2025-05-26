@@ -25,32 +25,44 @@ This project provides audio analysis capabilities using Essentia and TensorFlow 
 
 ## Prerequisites
 
-- Python 3.7+
+- Docker
+- Python 3.7+ (for local development)
 - TensorFlow 2.x
 - Essentia
 - NumPy
 
-## Installation
+## Quick Start with Docker
 
-1. Clone the repository:
+The easiest way to run the audio analysis is using Docker. Follow these steps:
+
+1. Build the Docker image:
 ```bash
-git clone <repository-url>
-cd <repository-name>
+docker build -t track-audio-analysis:local .
 ```
 
-2. Install the required dependencies:
+2. Run the container with your audio files:
 ```bash
-pip install -r requirements.txt
+docker run -v /path/to/local/audio/files:/opt/ml/processing/input/data \
+    -v /path/to/local/output:/opt/ml/processing/output/analysis \
+    track-audio-analysis:local \
+    --s3-input-uri /opt/ml/processing/input/data \
+    --s3-output-uri /opt/ml/processing/output/analysis \
+    --use-essentia true
 ```
 
-3. Set up the environment variables:
-```bash
-# Set the path to your TensorFlow models
-export ESSENTIA_TENSORFLOW_MODEL_PATH=/path/to/your/models
+Replace `/path/to/local/audio/files` with the path to your audio files directory and `/path/to/local/output` with where you want the analysis results to be saved.
 
-# Optional: Enable TensorFlow graph validation
-export VALIDATE_TF_GRAPHS=true
-```
+## Project Structure
+
+- `Dockerfile` - Container configuration for local and cloud deployment
+- `requirements.txt` - Python dependencies
+- `src/` - Source code directory
+- `input/` - Input directory for audio files
+- `output/` - Output directory for analysis results
+
+### AWS-specific Files (Not needed for local use)
+- `deploy.sh` - Script for deploying to AWS SageMaker
+- `buildspec.yml` - Configuration for AWS CodeBuild
 
 ## Required Models
 
@@ -65,9 +77,17 @@ The project requires the following TensorFlow models (`.pb` files):
 3. Mood Classification Model:
    - A model file containing 'mood_' in its name
 
-Place these models in the directory specified by `ESSENTIA_TENSORFLOW_MODEL_PATH`.
+Place these models in the appropriate directory inside the Docker container or mount them as a volume.
 
 ## Usage
+
+### Using Docker (Recommended)
+
+1. Place your audio files in a local directory
+2. Run the Docker container as shown in the Quick Start section
+3. Find the analysis results in your specified output directory
+
+### Using Python Directly
 
 ```python
 from src.models.essentia_models import EssentiaModels
