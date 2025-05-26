@@ -12,6 +12,16 @@ This project provides audio analysis capabilities using Essentia and TensorFlow 
 - Support for various audio formats
 - Automatic resampling to required sample rates
 - Robust error handling and logging
+- Genre Detection
+- Mood Detection
+- Instrument Recognition
+- Emotion Estimation
+- Vocal Register Estimation
+- Vocal Presence Detection
+- Autotune Presence Estimation
+- Key Detection
+- Beat Consistency Score
+- Audio Quality Estimation
 
 ## Prerequisites
 
