@@ -1,5 +1,7 @@
 # Audio Analysis Project
 
+![Audio Analysis Project](thumbnail.png)
+
 This project provides audio analysis capabilities using Essentia and TensorFlow models for genre and mood classification. It's designed to analyze audio files and extract high-level features such as music genre and emotional mood.
 
 ## Features
